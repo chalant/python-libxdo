@@ -64,13 +64,13 @@ class Xdo(object):
         display = display.encode('utf-8')
         self._xdo = _libxdo.xdo_new(display)
 
-        def _handle_x_error(evt):
-            # todo: handle errors in a nicer way, eg. try getting error message
-            raise XError('Event: {}'.format(evt))
-
-        self._error_handler = XErrorHandler(_handle_x_error)
-
-        _libX11.XSetErrorHandler(self._error_handler)
+        # def _handle_x_error(evt):
+        #     # todo: handle errors in a nicer way, eg. try getting error message
+        #     raise XError('Event: {}'.format(evt))
+        #
+        # self._error_handler = XErrorHandler(_handle_x_error)
+        #
+        # _libX11.XSetErrorHandler(self._error_handler)
 
     @classmethod
     def version(cls):
